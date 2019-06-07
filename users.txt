@@ -1,0 +1,47 @@
+[general]
+hasvoicemail=yes # L’utilisateur possède une boite vocale 
+hassip=yes # L’utilisateur possède un compte SIP 
+qualify=yes # Permet le monitoring
+[general] 
+hasvoicemail=yes 
+hassip=yes
+qualify=yes
+
+[template](!) # Nom du template d’utilisateur 
+type=friend # Type d'objet SIP (friend = utilisateur) 
+host=dynamic # L’utilisateur n’a pas une IP fixe 
+dtmfmode=rfc2833 #Mode DTMF 
+disallow=all # Interdit tous les codecs 
+allow=ulaw # Autorise le codec ulaw 
+
+[template](!)
+type=friend 
+host=dynamic 
+dtmfmode=rfc2833 
+disallow=all 
+allow=ulaw
+hassip=yes 
+qualify=yes 
+
+[1000](template) 
+context=appel 
+fullname=Brah Bassim 
+mailbox=1000 
+username=brah 
+secret=12345 
+
+[1001](template) 
+context=appel
+fullname=Moritie Camara 
+mailbox=1001 
+username= Moritie
+secret=12345 
+
+[1002](template) 
+context=appel 
+fullname=Daouda Maiga
+mailbox=1002 
+username=Daouda
+secret=12345
+
+ 

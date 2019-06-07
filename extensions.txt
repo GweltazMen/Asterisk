@@ -1,0 +1,7 @@
+[appel] 
+exten => _1XXX,1,Dial(SIP/${EXTEN},5)
+exten => _1XXX,2,Voicemail(${EXTEN}@appel_vm) 
+exten => _1XXX,3,Hungup() 
+
+exten => 100,1,Answer() 
+exten => 100,2,VoiceMailMain(${CALLERID(num)}@appel_vm) 
