@@ -1,14 +1,14 @@
-[general] 
-maxmsg=100 ; Nombre max de message sur la boite vocale 
-maxsecs=0 ; Durée max d'un message. Dans le cas de "0" = pas de 
-limite
-minsecs=2 ; Durée minimum d'un message
 [general]
-maxmsg=100 
-maxsecs=0 
-minsecs=2 
+maxmsg=100          ; Nombre max de message sur la Voicemail. Si elle est pleine, il n'est pas possible de rajouter des messages
+maxsecs=0           ; Durée max d'un message. "0" = pas de limite
+minsecs=2           ; Durée minimum d'un message
+maxlogins=3         ; Nombre max d'erreur de login
+review=no           ; Permet à l'appelant de réécouter son message avant de le transmettre à la Voicmail. Accessible en terminant le message par #
+saycid=no           ; Dicte le numéro de l'appelant avant de jouer le message qu'il a laissé
 
-[appel_vm] 
-1000 => 12345, Brah Bassim 
-1001 => 12345, Moritie Camara 
-1002 => 12345, Daouda Maiga
+[dept_1_vm]
+100 => 1234, Marc Aubert
+101 => 1234, Alain Aldric
+
+[dept_2_vm]
+200 => 1234, Leon Morgan
