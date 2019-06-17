@@ -1,7 +1,17 @@
-[appel] 
-exten => _1XXX,1,Dial(SIP/${EXTEN},5)
-exten => _1XXX,2,Voicemail(${EXTEN}@appel_vm) 
-exten => _1XXX,3,Hungup() 
+[dept_1]
+exten => _2XX,1,Goto(dept_2,${EXTEN},1)
 
-exten => 100,1,Answer() 
-exten => 100,2,VoiceMailMain(${CALLERID(num)}@appel_vm) 
+exten => _1[0-8]X,1,Dial(SIP/${EXTEN},40)
+exten => _1[0-8]X,2,Voicemail(${EXTEN}@dept_1_vm)
+
+exten => 199,1,Answer()
+exten => 199,2,VoiceMailMain(${CALLERID(num)}@dept_1_vm)
+
+[dept_2]
+exten => _1XX,1,Goto(dept_1,${EXTEN},1)
+
+exten => _2[0-8]X,1,Dial(SIP/${EXTEN},40)
+exten => _2[0-8]X,2,Voicemail(${EXTEN}@dept_2_vm)
+
+exten => 299,1,Answer()
+exten => 299,2,VoiceMailMain(${CALLERID(num)}@dept_2_vm)
